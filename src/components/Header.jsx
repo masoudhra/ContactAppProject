@@ -5,7 +5,7 @@ function Header() {
     <div className={styles.container}>
       <h1>Contact App</h1>
       <p>
-        <a href="#">Masoud Ramezani</a> | React.js Project
+        <a href="https://github.com/masoudhra">Masoud Ramezani</a> | React.js Project
       </p>
     </div>
   );
