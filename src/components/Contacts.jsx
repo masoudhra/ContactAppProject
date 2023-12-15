@@ -8,6 +8,7 @@ function Contacts() {
   const [contacts, setContacts] = useState([]);
   const [alert, setAlert] = useState("");
   const [contact, setContact] = useState({
+    id: "",
     name: "",
     lastName: "",
     email: "",
@@ -42,6 +43,12 @@ function Contacts() {
       phone: "",
     });
   };
+
+  const deleteHandler = (id) => {
+    const newContacts = contacts.filter((contact) => contact.id !== id);
+    setContacts(newContacts);
+  };
+
   return (
     <div>
       <div>
@@ -59,7 +66,7 @@ function Contacts() {
         <button onClick={addHandler}>Add Contact</button>
       </div>
       <div>{alert && <p>{alert}</p>}</div>
-      <ContactsList contacts={contacts} />
+      <ContactsList contacts={contacts} deleteHandler={deleteHandler} />
     </div>
   );
 }
